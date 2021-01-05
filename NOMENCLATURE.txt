@@ -1,0 +1,84 @@
+
+ - - - - - - MANUALLY SET VALUES - - - - - - 
+
+PATCH AND FEATURE SIZES
+xlength0 = intended x length fo patch. Actual length will be slightly different depending on feature sizes
+ylength0 = intended y length fo patch. Actual length will be slightly different depending on feature sizes
+xmove = translate the stage after patch is finished this distance (mm). Useful for making many test patches in a row
+hheight (or hexheight) = diameter of hexagonal features, at the shortest possible measurement (face to face)
+pwidth = width of square pillars
+holewidth = width of square holes
+spacing = space between adjacent features
+fatchage = use to adjust width of features if they are the wrong size
+tallchage = use to adjust height of features if they are the wrong size
+
+LASER PROPERTIES
+scanv = scanning velocity of the laser beam / stage
+depthcount = number of overscans
+zdrill = depth of a single overscan
+LW = line width of a single line
+ol0 = intended overlap percentage. Actual value might vary slightly to make features just the right size
+zdepth = total z travel during lasing, based on zdrill and depthcount
+Angle = angle of sample wrt beam. flat sample = 0. 45o sample = math.pi/4
+shuttertime = time for shutter open/close step. Should be 0.001 for SDG shutter or 0.008 for physical shutter
+maxaccel = max acceleration of X and Y stages
+Zmaxaccel = max acceleration of Z stage
+
+
+
+
+ - - - - - - AUTOMATICALLY CALCULATED VALUES - - - - - - 
+
+TRIGONOMETRY
+t60 = tan of 60o. Useful for hex features.
+s60 = sine of 60o
+c60 = cos of 60o
+sa = sine of the sample's angle
+ca = cose of the sample's angle
+LWa = line width of the angled sample. This will be slightly higher than LW due to projection onto an extended surface
+
+RASTER SCAN
+Rtot = total distance covered by raster scanning in a single loop of code
+Rshift0 = intended shift in beam position to achieve correct overlap %
+Rshift = actual shift in beam position
+Rshifty = shift in y stage (for angled surfaces Y and Z must work together to accomplish shift on plane of sample)
+Rshiftz = shift in z stage
+OLtrue = true overlap percentage
+N0 = intended number of loops to accomplish above settings
+N = actual number of loops (must be integer...)
+Nh = loop count for hexes
+Ns = loop count for spacing between features
+Np = loop count for square pillars
+
+DIMENSIONS
+dx shift in x-position after each raster scan to create hexagonal pattern
+xgap = feature spacing expressed wrt orientation of hex codes
+UCwidth = width of a unit cell for hex codes
+UCheight = height of a unit cell for hex codes
+stripecount = number of unit cell repetitions in x direction
+solidcount = number of unit cell repetitions in y direction
+HexHeightTrue = true height of inscribed hex
+SpacingWidthTrue = true spacing between features
+shutterspace = physical travel distance of beam during a shutter opening event
+bwidth = width of base of hexagon (one side)
+hwidth (or hexwidth) = width of a hexagon, from corner to corner
+pitch = pitch of features pattern
+xlength = final width of patch
+ylength = final height of patch
+
+TIMING
+flytime = time needed for the beam to 'fly back' to the starting x-position
+flydist = space the beam must move back to start next raster scan in X
+
+
+
+
+
+
+
+
+
+
+
+
+
